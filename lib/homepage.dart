@@ -21,8 +21,8 @@ class _HomeState extends State<Home> {
 // APPBAR
 
       appBar: AppBar(
-        foregroundColor: Color.fromARGB(255, 255, 255, 255),
-        backgroundColor: Color.fromARGB(255, 243, 90, 44),
+        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(255, 243, 90, 44),
         title: Padding(
           padding: const EdgeInsets.only(left: 70),
           child: Text(header1),
@@ -33,7 +33,7 @@ class _HomeState extends State<Home> {
           children: [
             ListTile(
               leading: const Icon(Icons.home),
-              title: Text("Home"),
+              title: const Text("Home"),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const Home()));
@@ -41,7 +41,7 @@ class _HomeState extends State<Home> {
             ),
             ListTile(
               leading: const Icon(Icons.image),
-              title: Text("Gallery"),
+              title: const Text("Gallery"),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const MyApp3()));
@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
             ),
             ListTile(
               leading: const Icon(Icons.exit_to_app),
-              title: Text("Exit"),
+              title: const Text("Exit"),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const MyApp()));
@@ -147,7 +147,7 @@ class _HomeState extends State<Home> {
                     decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 243, 90, 44),
                         border: Border.all(
-                            color: Color.fromARGB(255, 255, 255, 255),
+                            color: const Color.fromARGB(255, 255, 255, 255),
                             width: 5),
                         borderRadius: BorderRadius.circular(15)),
                     child: const Center(
@@ -158,14 +158,14 @@ class _HomeState extends State<Home> {
                           fontSize: 20),
                     )),
                   )),
-              Spacer(),
+              const Spacer(),
               Container(
                 height: 100,
                 width: 100,
                 decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 243, 90, 44),
                     border: Border.all(
-                        color: Color.fromARGB(255, 255, 255, 255), width: 5),
+                        color: const Color.fromARGB(255, 255, 255, 255), width: 5),
                     borderRadius: BorderRadius.circular(15)),
                 child: const Center(
                     child: Text(
@@ -174,14 +174,14 @@ class _HomeState extends State<Home> {
                       color: Color.fromARGB(255, 255, 255, 255), fontSize: 20),
                 )),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 height: 100,
                 width: 100,
                 decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 243, 90, 44),
                     border: Border.all(
-                        color: Color.fromARGB(255, 255, 255, 255), width: 5),
+                        color: const Color.fromARGB(255, 255, 255, 255), width: 5),
                     borderRadius: BorderRadius.circular(15)),
                 child: const Center(
                     child: Text(
@@ -202,8 +202,8 @@ class _HomeState extends State<Home> {
           height: 50,
           width: 50,
           child: FloatingActionButton(
-            foregroundColor: Color.fromARGB(255, 255, 255, 255),
-            backgroundColor: Color.fromARGB(255, 243, 90, 44),
+            foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+            backgroundColor: const Color.fromARGB(255, 243, 90, 44),
             onPressed: () {
               Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => const Home()));
@@ -215,8 +215,8 @@ class _HomeState extends State<Home> {
 
       bottomNavigationBar: BottomAppBar(
         height: 50,
-        color: Color.fromARGB(255, 243, 90, 44),
-        shape: CircularNotchedRectangle(),
+        color: const Color.fromARGB(255, 243, 90, 44),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 5,
         child: Row(
           mainAxisSize: MainAxisSize.max,

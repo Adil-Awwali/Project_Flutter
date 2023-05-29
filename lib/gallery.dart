@@ -13,8 +13,8 @@ class MyApp3 extends StatelessWidget {
 // APPBAR
 
       appBar: AppBar(
-        foregroundColor: Color.fromARGB(255, 255, 255, 255),
-        backgroundColor: Color.fromARGB(255, 243, 90, 44),
+        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(255, 243, 90, 44),
         title: Padding(
           padding: const EdgeInsets.only(left: 70),
           child: Text(header1),
@@ -25,7 +25,7 @@ class MyApp3 extends StatelessWidget {
           children: [
             ListTile(
               leading: const Icon(Icons.home),
-              title: Text("Home"),
+              title: const Text("Home"),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const Home()));
@@ -33,7 +33,7 @@ class MyApp3 extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.image),
-              title: Text("Gallery"),
+              title: const Text("Gallery"),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const MyApp3()));
@@ -41,7 +41,7 @@ class MyApp3 extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.exit_to_app),
-              title: Text("Exit"),
+              title: const Text("Exit"),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const MyApp()));
@@ -67,8 +67,8 @@ class MyApp3 extends StatelessWidget {
           height: 50,
           width: 50,
           child: FloatingActionButton(
-            foregroundColor: Color.fromARGB(255, 255, 255, 255),
-            backgroundColor: Color.fromARGB(255, 243, 90, 44),
+            foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+            backgroundColor: const Color.fromARGB(255, 243, 90, 44),
             onPressed: () {
               Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => const Home()));
@@ -80,8 +80,8 @@ class MyApp3 extends StatelessWidget {
 
       bottomNavigationBar: BottomAppBar(
         height: 50,
-        color: Color.fromARGB(255, 243, 90, 44),
-        shape: CircularNotchedRectangle(),
+        color: const Color.fromARGB(255, 243, 90, 44),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 5,
         child: Row(
           mainAxisSize: MainAxisSize.max,

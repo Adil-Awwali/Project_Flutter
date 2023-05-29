@@ -24,8 +24,8 @@ class _MyAppState extends State<MyApp> {
 // APPBAR
 
         appBar: AppBar(
-          foregroundColor: Color.fromARGB(255, 255, 255, 255),
-          backgroundColor: Color.fromARGB(255, 243, 90, 44),
+          foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: const Color.fromARGB(255, 243, 90, 44),
           title: Center(child: Text(header1)),
         ),
 
@@ -61,8 +61,8 @@ class _MyAppState extends State<MyApp> {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  foregroundColor: Color.fromARGB(255, 255, 255, 255),
-                  backgroundColor: Color.fromARGB(255, 243, 90, 44),
+                  foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+                  backgroundColor: const Color.fromARGB(255, 243, 90, 44),
                 ),
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
