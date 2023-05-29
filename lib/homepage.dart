@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+//import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:projectuts_2/gallery.dart';
 import 'package:projectuts_2/main.dart';
 
@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
   var header1 = "Homepage";
   @override
   Widget build(BuildContext context) {
-    final List<String> entries = <String>['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+    //final List<String> entries = <String>['A', 'B', 'C', 'D', 'E', 'F', 'G'];
     return Scaffold(
       
 // APPBAR
