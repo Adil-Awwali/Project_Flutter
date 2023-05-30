@@ -55,7 +55,7 @@ class MyApp3 extends StatelessWidget {
 
       body: Column(
         children: [
-          Image.asset('assets/F_Logo.png'),
+          Image.asset('assets/API_Logo.png'),
           Image.asset('assets/FLUTTER.png')
         ],
       ),
