@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-//import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:projectuts_2/gallery.dart';
 import 'package:projectuts_2/homepage.dart';
 import 'package:projectuts_2/main.dart';
 
-class MyApp3 extends StatelessWidget {
-  const MyApp3({super.key});
+class Input extends StatefulWidget {
+  const Input({super.key});
+
+  @override
+  State<Input> createState() => _InputState();
+}
+
+class _InputState extends State<Input> {
   @override
   Widget build(BuildContext context) {
-    var header1 = "Gallery";
+    var header1 = "Input";
     return Scaffold(
 // APPBAR
 
@@ -86,12 +91,36 @@ class MyApp3 extends StatelessWidget {
 
 // BODY
 
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: const Padding(
+        padding: EdgeInsets.all(16.0),
         child: Column(
           children: [
-            Image.asset('assets/F_Logo.png'),
-            Image.asset('assets/FLUTTER.png')
+            Padding(
+              padding: EdgeInsets.only(top: 10.0),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                      width: 5,
+                      color: Color.fromARGB(255, 243, 90, 44),
+                    )),
+                    labelText: "Title"),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 10.0),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                      width: 5,
+                      color: Color.fromARGB(255, 243, 90, 44),
+                    )),
+                    labelText: "Subject"),
+                maxLines: 10,
+                minLines: 10,
+              ),
+            )
           ],
         ),
       ),

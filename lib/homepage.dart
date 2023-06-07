@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 //import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:projectuts_2/gallery.dart';
+import 'package:projectuts_2/input.dart';
 import 'package:projectuts_2/main.dart';
 
 class Home extends StatelessWidget {
@@ -18,10 +19,7 @@ class Home extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         /* Colors.transparent,
         elevation: 0, */
-        title: Padding(
-          padding: const EdgeInsets.only(left: 70),
-          child: Text(header1),
-        ),
+        title: Center(child: Text(header1)),
         actions: [
           IconButton(
             icon: Icon(Icons.search),
@@ -33,6 +31,17 @@ class Home extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         child: ListView(
           children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 243, 90, 44),
+              ),
+              child: Text(
+                'Account',
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+            ),
             ListTile(
               leading: const Icon(
                 Icons.home,
@@ -163,7 +172,7 @@ class Home extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                        builder: (context) => const MyApp3(),
+                        builder: (context) => const Input(),
                       ),
                     );
                   },
