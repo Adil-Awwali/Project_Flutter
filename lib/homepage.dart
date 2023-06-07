@@ -4,25 +4,19 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:projectuts_2/gallery.dart';
 import 'package:projectuts_2/main.dart';
 
-class Home extends StatefulWidget {
+class Home extends StatelessWidget {
   const Home({super.key});
-
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  var header1 = "Homepage";
   @override
   Widget build(BuildContext context) {
+    var header1 = "Homepage";
     //final List<String> entries = <String>['A', 'B', 'C', 'D', 'E', 'F', 'G'];
     return Scaffold(
 // APPBAR
 
       appBar: AppBar(
         foregroundColor: const Color.fromARGB(255, 243, 90, 44),
-        backgroundColor:  const Color.fromARGB(255, 255, 255, 255),
-            /* Colors.transparent,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        /* Colors.transparent,
         elevation: 0, */
         title: Padding(
           padding: const EdgeInsets.only(left: 70),
@@ -36,27 +30,52 @@ class _HomeState extends State<Home> {
         ],
       ),
       drawer: Drawer(
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         child: ListView(
           children: [
             ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text("Home"),
+              leading: const Icon(
+                Icons.home,
+                color: const Color.fromARGB(255, 243, 90, 44),
+              ),
+              title: const Text(
+                "Home",
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 243, 90, 44),
+                ),
+              ),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const Home()));
               },
             ),
             ListTile(
-              leading: const Icon(Icons.image),
-              title: const Text("Gallery"),
+              leading: const Icon(
+                Icons.image,
+                color: const Color.fromARGB(255, 243, 90, 44),
+              ),
+              title: const Text(
+                "Gallery",
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 243, 90, 44),
+                ),
+              ),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const MyApp3()));
               },
             ),
             ListTile(
-              leading: const Icon(Icons.exit_to_app),
-              title: const Text("Exit"),
+              leading: const Icon(
+                Icons.exit_to_app,
+                color: const Color.fromARGB(255, 243, 90, 44),
+              ),
+              title: const Text(
+                "Exit",
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 243, 90, 44),
+                ),
+              ),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const MyApp()));

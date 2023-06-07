@@ -21,27 +21,52 @@ class MyApp3 extends StatelessWidget {
         ),
       ),
       drawer: Drawer(
+        backgroundColor: const Color.fromARGB(255, 243, 90, 44),
         child: ListView(
           children: [
             ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text("Home"),
+              leading: const Icon(
+                Icons.home,
+                color: const Color.fromARGB(255, 255, 255, 255),
+              ),
+              title: const Text(
+                "Home",
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const Home()));
               },
             ),
             ListTile(
-              leading: const Icon(Icons.image),
-              title: const Text("Gallery"),
+              leading: const Icon(
+                Icons.image,
+                color: const Color.fromARGB(255, 255, 255, 255),
+              ),
+              title: const Text(
+                "Gallery",
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const MyApp3()));
               },
             ),
             ListTile(
-              leading: const Icon(Icons.exit_to_app),
-              title: const Text("Exit"),
+              leading: const Icon(
+                Icons.exit_to_app,
+                color: const Color.fromARGB(255, 255, 255, 255),
+              ),
+              title: const Text(
+                "Exit",
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const MyApp()));
