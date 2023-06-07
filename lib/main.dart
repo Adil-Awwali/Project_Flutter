@@ -45,7 +45,12 @@ class _MyAppState extends State<MyApp> {
                 padding: EdgeInsets.only(top: 10),
                 child: TextField(
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), labelText: "Username"),
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                        width: 5,
+                        color: Color.fromARGB(255, 243, 90, 44),
+                      )),
+                      labelText: "Username"),
                 ),
               ),
               const Padding(
@@ -53,7 +58,12 @@ class _MyAppState extends State<MyApp> {
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(), labelText: "Password"),
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                        width: 5,
+                        color: Color.fromARGB(255, 243, 90, 44),
+                      )),
+                      labelText: "Password"),
                 ),
               ),
               const SizedBox(
