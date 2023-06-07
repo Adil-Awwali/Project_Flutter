@@ -46,12 +46,12 @@ class _InputState extends State<Input> {
             ListTile(
               leading: const Icon(
                 Icons.home,
-                color: const Color.fromARGB(255, 255, 255, 255),
+                color: Color.fromARGB(255, 255, 255, 255),
               ),
               title: const Text(
                 "Home",
                 style: TextStyle(
-                  color: const Color.fromARGB(255, 255, 255, 255),
+                  color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
               onTap: () {
@@ -62,12 +62,12 @@ class _InputState extends State<Input> {
             ListTile(
               leading: const Icon(
                 Icons.image,
-                color: const Color.fromARGB(255, 255, 255, 255),
+                color: Color.fromARGB(255, 255, 255, 255),
               ),
               title: const Text(
                 "Gallery",
                 style: TextStyle(
-                  color: const Color.fromARGB(255, 255, 255, 255),
+                  color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
               onTap: () {
@@ -78,12 +78,12 @@ class _InputState extends State<Input> {
             ListTile(
               leading: const Icon(
                 Icons.exit_to_app,
-                color: const Color.fromARGB(255, 255, 255, 255),
+                color: Color.fromARGB(255, 255, 255, 255),
               ),
               title: const Text(
                 "Exit",
                 style: TextStyle(
-                  color: const Color.fromARGB(255, 255, 255, 255),
+                  color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
               onTap: () {
@@ -124,9 +124,20 @@ class _InputState extends State<Input> {
                     )),
                     labelText: "Subject"),
                 maxLines: 10,
-                minLines: 10,
+                minLines: 1,
               ),
-            )
+            ),/* 
+            SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Color.fromARGB(255, 255, 255, 255),
+                backgroundColor: Color.fromARGB(255, 243, 90, 44),
+              ),
+              onPressed: () {},
+              child: Text("Post"),
+            ) */
           ],
         ),
       ),

@@ -96,8 +96,8 @@ class MyApp3 extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            Image.asset('assets/FLUTTER.png'),
             Image.asset('assets/F_Logo.png'),
-            Image.asset('assets/FLUTTER.png')
           ],
         ),
       ),
