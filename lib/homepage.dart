@@ -35,12 +35,18 @@ class Home extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 243, 90, 44),
               ),
-              child: Text(
-                'Account',
-                style: TextStyle(
-                  color: const Color.fromARGB(255, 255, 255, 255),
+              child: Row(children: [
+                Icon(
+                  Icons.person,
+                  color: Color.fromARGB(255, 255, 255, 255),
                 ),
-              ),
+                Text(
+                  'Account',
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                  ),
+                ),
+              ]),
             ),
             ListTile(
               leading: const Icon(
