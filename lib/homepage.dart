@@ -17,16 +17,23 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     //final List<String> entries = <String>['A', 'B', 'C', 'D', 'E', 'F', 'G'];
     return Scaffold(
-      
 // APPBAR
 
       appBar: AppBar(
-        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-        backgroundColor: const Color.fromARGB(255, 243, 90, 44),
+        foregroundColor: const Color.fromARGB(255, 243, 90, 44),
+        backgroundColor:  const Color.fromARGB(255, 255, 255, 255),
+            /* Colors.transparent,
+        elevation: 0, */
         title: Padding(
           padding: const EdgeInsets.only(left: 70),
           child: Text(header1),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {},
+          )
+        ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -129,7 +136,7 @@ class _HomeState extends State<Home> {
 // BODY#2
 
       body: ListView(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(16.0),
         children: <Widget>[
           Row(
             children: [
@@ -144,51 +151,76 @@ class _HomeState extends State<Home> {
                   child: Container(
                     height: 100,
                     width: 100,
-                    decoration: BoxDecoration(
+                    /* decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 243, 90, 44),
                         border: Border.all(
-                            color: const Color.fromARGB(255, 255, 255, 255),
-                            width: 5),
-                        borderRadius: BorderRadius.circular(15)),
+                          color: const Color.fromARGB(
+                              255, 255, 255, 255), /* width: 5 */
+                        ),
+                        borderRadius: BorderRadius.circular(15)), */
                     child: const Center(
-                        child: Text(
+                        child: Icon(
+                      Icons.note_add,
+                      size: 50,
+                      color: const Color.fromARGB(255, 243, 90, 44),
+                    ) /* child: const Center(
+                    child: Text(
                       'Entry A',
                       style: TextStyle(
                           color: Color.fromARGB(255, 255, 255, 255),
                           fontSize: 20),
-                    )),
+                    ) */
+                        ),
                   )),
               const Spacer(),
               Container(
                 height: 100,
                 width: 100,
-                decoration: BoxDecoration(
+                /* decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 243, 90, 44),
                     border: Border.all(
-                        color: const Color.fromARGB(255, 255, 255, 255), width: 5),
-                    borderRadius: BorderRadius.circular(15)),
+                      color: const Color.fromARGB(
+                          255, 255, 255, 255), /* width: 5 */
+                    ),
+                    borderRadius: BorderRadius.circular(15)), */
                 child: const Center(
+                    child: Icon(
+                  Icons.note_add,
+                  size: 50,
+                  color: const Color.fromARGB(255, 243, 90, 44),
+                )
+                    /* child: const Center(
                     child: Text(
                   'Entry B',
                   style: TextStyle(
                       color: Color.fromARGB(255, 255, 255, 255), fontSize: 20),
-                )),
+                ) */
+                    ),
               ),
               const Spacer(),
               Container(
                 height: 100,
                 width: 100,
-                decoration: BoxDecoration(
+                /* decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 243, 90, 44),
                     border: Border.all(
-                        color: const Color.fromARGB(255, 255, 255, 255), width: 5),
-                    borderRadius: BorderRadius.circular(15)),
+                      color: const Color.fromARGB(
+                          255, 255, 255, 255), /* width: 5 */
+                    ),
+                    borderRadius: BorderRadius.circular(15)), */
                 child: const Center(
+                    child: Icon(
+                  Icons.note_add,
+                  size: 50,
+                  color: const Color.fromARGB(255, 243, 90, 44),
+                )
+                    /* child: const Center(
                     child: Text(
                   'Entry C',
                   style: TextStyle(
                       color: Color.fromARGB(255, 255, 255, 255), fontSize: 20),
-                )),
+                ) */
+                    ),
               ),
             ],
           ),
@@ -202,8 +234,8 @@ class _HomeState extends State<Home> {
           height: 50,
           width: 50,
           child: FloatingActionButton(
-            foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-            backgroundColor: const Color.fromARGB(255, 243, 90, 44),
+            foregroundColor: const Color.fromARGB(255, 243, 90, 44),
+            backgroundColor: const Color.fromARGB(255, 255, 255, 255),
             onPressed: () {
               Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => const Home()));
@@ -215,7 +247,7 @@ class _HomeState extends State<Home> {
 
       bottomNavigationBar: BottomAppBar(
         height: 50,
-        color: const Color.fromARGB(255, 243, 90, 44),
+        color: const Color.fromARGB(255, 255, 255, 255),
         shape: const CircularNotchedRectangle(),
         notchMargin: 5,
         child: Row(
@@ -224,8 +256,8 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             IconButton(
               icon: const Icon(
-                Icons.search,
-                color: Colors.white,
+                Icons.settings,
+                color: const Color.fromARGB(255, 243, 90, 44),
               ),
               onPressed: () {},
             ),
@@ -234,7 +266,7 @@ class _HomeState extends State<Home> {
               child: IconButton(
                 icon: const Icon(
                   Icons.home,
-                  color: Colors.white,
+                  color: const Color.fromARGB(255, 243, 90, 44),
                 ),
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
@@ -245,7 +277,7 @@ class _HomeState extends State<Home> {
             IconButton(
               icon: const Icon(
                 Icons.image,
-                color: Colors.white,
+                color: const Color.fromARGB(255, 243, 90, 44),
               ),
               onPressed: () {
                 Navigator.of(context).pushReplacement(
@@ -255,7 +287,7 @@ class _HomeState extends State<Home> {
             IconButton(
               icon: const Icon(
                 Icons.exit_to_app,
-                color: Colors.white,
+                color: const Color.fromARGB(255, 243, 90, 44),
               ),
               onPressed: () {
                 Navigator.of(context).pushReplacement(

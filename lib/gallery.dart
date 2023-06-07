@@ -53,11 +53,14 @@ class MyApp3 extends StatelessWidget {
 
 // BODY
 
-      body: Column(
-        children: [
-          Image.asset('assets/API_Logo.png'),
-          Image.asset('assets/FLUTTER.png')
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Image.asset('assets/F_Logo.png'),
+            Image.asset('assets/FLUTTER.png')
+          ],
+        ),
       ),
 
 // FLOATING ACTION BUTTON
