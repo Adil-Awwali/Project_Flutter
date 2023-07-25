@@ -10,6 +10,7 @@ class MyApp3 extends StatelessWidget {
   Widget build(BuildContext context) {
     var header1 = "Gallery";
     return Scaffold(
+      
 // APPBAR
 
       appBar: AppBar(

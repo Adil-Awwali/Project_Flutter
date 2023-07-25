@@ -12,6 +12,7 @@ class Home extends StatelessWidget {
     var header1 = "Homepage";
     //final List<String> entries = <String>['A', 'B', 'C', 'D', 'E', 'F', 'G'];
     return Scaffold(
+      
 // APPBAR
 
       appBar: AppBar(

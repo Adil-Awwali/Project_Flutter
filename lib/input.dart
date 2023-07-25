@@ -15,6 +15,7 @@ class _InputState extends State<Input> {
   Widget build(BuildContext context) {
     var header1 = "Input";
     return Scaffold(
+      
 // APPBAR
 
       appBar: AppBar(
