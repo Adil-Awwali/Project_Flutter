@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 //import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:projectuts_2/homepage.dart';
 import 'package:projectuts_2/main.dart';
+import 'package:http/http.dart' as http;
 
 class MyApp3 extends StatelessWidget {
   const MyApp3({super.key});

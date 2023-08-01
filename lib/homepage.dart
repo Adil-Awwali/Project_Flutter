@@ -1,18 +1,56 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:projectuts_2/create.dart';
+import 'package:projectuts_2/input2.dart';
 //import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:projectuts_2/gallery.dart';
 import 'package:projectuts_2/input.dart';
 import 'package:projectuts_2/main.dart';
+import 'package:http/http.dart' as http;
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int _counter = 0;
+  int totalData = 0;
+  var dataJson;
+
+  void _getDataFromStrapi() async {
+    Map<String, String> headers = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    };
+    var response = await http.get(Uri.parse('http://localhost:1337/api/tasks'),
+        headers: headers);
+
+    dataJson = jsonDecode(response.body);
+
+    setState(() {
+      totalData = dataJson["meta"]["pagination"]["total"];
+      //print(dataJson["data"][1]["attributes"]["Judul"]);
+      _counter++;
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _getDataFromStrapi();
+  }
+
   @override
   Widget build(BuildContext context) {
     var header1 = "Homepage";
     //final List<String> entries = <String>['A', 'B', 'C', 'D', 'E', 'F', 'G'];
     return Scaffold(
-      
 // APPBAR
 
       appBar: AppBar(
@@ -170,7 +208,7 @@ class Home extends StatelessWidget {
 
 // BODY#2
 
-      body: ListView(
+      /*  body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: <Widget>[
           Row(
@@ -260,7 +298,58 @@ class Home extends StatelessWidget {
             ],
           ),
         ],
-      ),
+      ), */
+
+// BODY#3
+
+      body: ListView.builder(
+          itemCount: totalData,
+          itemBuilder: (data, index) {
+            return ListTile(
+              onTap: () {
+                var judul = dataJson["data"][index]["attributes"]["Judul"];
+                var konten = dataJson["data"][index]["attributes"]["konten"];
+                var id = dataJson["data"][index]["id"];
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Input2(
+                            judul: judul,
+                            konten: konten,
+                            id: id,
+                          )),
+                );
+              },
+              leading: Icon(Icons.task,
+                  color: const Color.fromARGB(255, 243, 90, 44)),
+              trailing: IconButton(
+                  onPressed: () async {
+                    var id = dataJson["data"][index]["id"];
+                    Map<String, String> headers = {
+                      'Content-Type': 'application/json',
+                      'Accept': 'application/json'
+                    };
+                    var response = await http.delete(
+                        Uri.parse('http://localhost:1337/api/tasks/$id'),
+                        headers: headers);
+                    _getDataFromStrapi();
+                  },
+                  icon: Icon(Icons.delete,
+                      color: const Color.fromARGB(255, 243, 90, 44))),
+              title: Text(dataJson["data"][index]["attributes"]["Judul"]),
+            );
+          }),
+      /* 
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const CreateTask()),
+          );
+        },
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+      ), */
 
 // FLOATING ACTION BUTTON
 
@@ -272,11 +361,19 @@ class Home extends StatelessWidget {
             foregroundColor: const Color.fromARGB(255, 243, 90, 44),
             backgroundColor: const Color.fromARGB(255, 255, 255, 255),
             onPressed: () {
-              Navigator.of(context).pushReplacement(
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const CreateTask()),
+              );
+            },
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          )),
+      /*  Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => const Home()));
             },
             child: const Icon(Icons.arrow_upward),
-          )),
+          )), */
 
 // BOTTOM NAVIGATION BAR
 
